@@ -6,4 +6,4 @@ Frontend of this website is made using HTML5, CSS3 and Javascript,
 Backend of this website is made using Python framework "Django" and
 Database used for these website is nosql db (MongoDB)
 
-Video Link : will get uploaded soon
+Video Link : https://youtu.be/E66nwyg5yJE
