@@ -4,6 +4,6 @@ Online learning technologies offer the most efficient way for students and busin
 
 Frontend of this website is made using HTML5, CSS3 and Javascript,
 Backend of this website is made using Python framework "Django" and
-Database used for these website is nosql db (MongoDB)
+Database used for these website is sql db (POSTGRESQL)
 
 Video Link : https://youtu.be/E66nwyg5yJE
