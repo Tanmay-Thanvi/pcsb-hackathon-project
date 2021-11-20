@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>E Learning WebApp - {{title}} </title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<style>
+  .alert {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 4px;
+      border-style: solid;
+      border-width: 1px;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+    
+    .alert.alert-success {
+      background-color: rgba(227, 253, 235, 1);
+      border-color: rgba(38, 179, 3, 1);
+      color: rgba(60, 118, 61, 1);
+    }
+    
+    .alert.alert-info {
+      background-color: rgba(217, 237, 247, 1);
+      color: rgba(49, 112, 143, 1);
+      border-color: rgba(126, 182, 193, 1);
+    }
+    
+    
+    .alert.alert-warning {
+      background-color: rgba(252, 248, 227, 1);
+      border-color: rgba(177, 161, 129, 1);
+      color: rgba(138, 109, 59, 1);
+    }
+    
+    .alert.alert-error {
+      background-color: rgba(248, 215, 218, 1);
+      border-color: rgba(220, 53, 69, 1);
+      color: rgba(114, 28, 36,1);
+    }
+</style>
+<body>
+    <div class="wrapper">
+      <section class="form login">
+        <header>E Learning WebApp</header>
+        <div class="error-text">
+          <!-- errors will be get displayed here  -->
+          {% for i in messages %}
+              <div class="alert alert-{{i.tags}}" role="alert">{{i}}</div>
+          {% endfor %}
+        </div>
+        <form action="{% url 'login' %}" method="POST" enctype="multipart/form-data" autocomplete="off">
+          {% csrf_token %}
+          <div class="field input">
+            <label>Email Address</label>
+            <input type="text" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="field input">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <i class="fas fa-eye"></i>
+          </div>
+          <div class="field button">
+            <input type="submit" name="submit" value="Continue to Learn">
+          </div>
+        </form>
+        <div class="link">Not yet signed up? <a href="{% url 'signup' %}">Signup now</a></div>
+      </section>
+    </div>
+    
+    <script src="{% static 'javascript/pass-show-hide.js' %}"></script>
+  
+  </body>
+  </html>
